@@ -1,10 +1,14 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
+import os
 
 app = FastAPI(title="Movie Like Prediction API")
 
-model = joblib.load("model.joblib")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "model.joblib")
+
+model = joblib.load(model_path)
 
 class InputData(BaseModel):
     user_id: int
