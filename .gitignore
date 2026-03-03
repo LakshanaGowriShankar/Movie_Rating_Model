@@ -1,0 +1,7 @@
+backend/mlruns/
+backend/data/
+backend/__pycache__/
+backend/model.joblib
+backend/mlflow.db
+*.pkl
+*.joblib
