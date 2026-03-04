@@ -45,7 +45,11 @@ mlflow.set_experiment("Movie-Like-Prediction")
 
 with mlflow.start_run():
 
-    model = RandomForestClassifier(n_estimators=100)
+    model = RandomForestClassifier(
+        n_estimators=20,
+        max_depth=8,
+        random_state=42
+    )
     model.fit(X_train, y_train)
 
     preds = model.predict(X_test)
